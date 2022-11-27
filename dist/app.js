@@ -24,3 +24,4 @@ class ProjectInput {
     }
 }
 const prjInput = new ProjectInput();
+const Nikola = document.querySelector("#project-input");
