@@ -1,37 +1,4 @@
-// Validation Logic
-interface Validatable {
-  value: string | number;
-  required?: boolean;
-  minLength?: number;
-  maxLength?: number;
-  min?: number;
-  max?: number;
-}
-
-function validate(validateInput:Validatable){
-  let isValid = true;
-  if(validateInput.required){
-    isValid = isValid && validateInput.value.toString().trim().length !== 0;
-  }
-  if(validateInput.minLength != null && validateInput.value === "string" )
-  {
-    isValid = isValid && validateInput.value.length > validateInput.minLength;
-  }
-  if(validateInput.maxLength != null && validateInput.value === "string" )
-  {
-    isValid = isValid && validateInput.value.length < validateInput.maxLength;
-  }
-  if(validateInput.min != null && typeof validateInput.value === "number"){
-    isValid = isValid && validateInput.value > validateInput.min;
-  }
-  if(validateInput.max != null && typeof validateInput.value === "number"){
-    isValid = isValid && validateInput.value < validateInput.max;
-  }
-  return isValid;
-}
-
-
-class ProjectInput {
+/*class ProjectInput {
   //def vrednost html elemenata
     templateElement: HTMLTemplateElement;
     hostElement: HTMLDivElement;
@@ -57,46 +24,20 @@ class ProjectInput {
       this.configure();
       this.attach();
     }
-//validacija 
+
     private getterUserInputs():[string , string , number]|void{
       const enteredTitle = this.titleInputelement.value;
       const destricptionTitle = this.descriptionInputElement.value;
       const peopleTitle = this.peopleInputElement.value;
 
-
-      const titleValidation:Validatable = {
-         value:enteredTitle,
-         required:true,
-      };
-
-
-      const destricptionValidation:Validatable = {
-        value:destricptionTitle,
-        required:true,
-        minLength: 5,
-     };
-
-     const peopleValidation:Validatable = {
-      value:+peopleTitle,
-      required:true,
-      min:1,
-      max:5
-   };
-      if(/*enteredTitle.trim().length===0 ||  destricptionTitle.trim().length===0 || peopleTitle.trim().length===0 */
-      
-        !validate(titleValidation)||
-        !validate(destricptionValidation)||
-        !validate(peopleValidation)
-      
-      
-       ){
+      if(enteredTitle.trim().length===0 ||  destricptionTitle.trim().length===0 || peopleTitle.trim().length===0  ){
         alert("Invalid validation , please try agin!");
       }
       else{
         return [enteredTitle , destricptionTitle, +peopleTitle ];
       }
     }
-//brisanj input polja nakon unosa
+
     private clearInputsElements(){
       this.titleInputelement.value = "";
       this.descriptionInputElement.value = "";
@@ -126,4 +67,4 @@ class ProjectInput {
   
   const prjInput = new ProjectInput();
 
-  
+  */
